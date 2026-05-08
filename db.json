@@ -1,0 +1,144 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Airpods Apple, com Estojo de Recarga, Bluetooth",
+      "description": "Airpods Apple, com Estojo de Recarga, Bluetooth, Branco. O Novo AirPods traz uma experiencia nova em usar fones de ouvido sem fio.",
+      "price": 120,
+      "cover": "https://i.imgur.com/uXrbyfA.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Notebook Gamer Lenovo Gaming 3i Intel Core i5-11300H",
+      "description": "Notebook gamer com processador Intel Core i5 e placa dedicada para alta performance em jogos e estudos.",
+      "price": 3799.9,
+      "cover": "https://i.imgur.com/bM5IUKe.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Teclado Mecanico Gamer HyperX Alloy",
+      "description": "Teclado mecanico com estrutura em aluminio e iluminacao RGB para setup gamer.",
+      "price": 199.99,
+      "cover": "https://i.imgur.com/ldh1Q8O.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Monitor Gamer Husky Tempest 34",
+      "description": "Monitor ultrawide curvo 34 polegadas com taxa de 144Hz para maior imersao.",
+      "price": 2099.99,
+      "cover": "https://i.imgur.com/sRmbcWW.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Soundbar LG SNH5, 4.1 Canais, Bluetooth, 600W RMS",
+      "description": "Soundbar com audio envolvente para filmes, series e musica.",
+      "price": 1099.99,
+      "cover": "https://i.imgur.com/w7SeQsa.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Smartwatch Samsung Galaxy Watch 5, BT, 40mm",
+      "description": "Smartwatch com recursos de saude, treino e notificacoes em tempo real.",
+      "price": 1139,
+      "cover": "https://i.imgur.com/Ua4bURp.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Mouse Gamer RGB 16000 DPI",
+      "description": "Mouse com sensor de alta precisao e botoes programaveis.",
+      "price": 249.9,
+      "cover": "https://picsum.photos/seed/produto-7/600/600"
+    },
+    {
+      "id": 8,
+      "title": "Headset Gamer 7.1",
+      "description": "Headset com som surround e microfone removivel.",
+      "price": 329.9,
+      "cover": "https://picsum.photos/seed/produto-8/600/600"
+    },
+    {
+      "id": 9,
+      "title": "Webcam Full HD 1080p",
+      "description": "Webcam ideal para chamadas, aulas e streaming.",
+      "price": 289.9,
+      "cover": "https://picsum.photos/seed/produto-9/600/600"
+    },
+    {
+      "id": 10,
+      "title": "SSD NVMe 1TB",
+      "description": "Armazenamento rapido para sistema e jogos.",
+      "price": 459.9,
+      "cover": "https://picsum.photos/seed/produto-10/600/600"
+    },
+    {
+      "id": 11,
+      "title": "Memoria RAM 16GB DDR4",
+      "description": "Memoria para melhorar desempenho em multitarefa.",
+      "price": 299.9,
+      "cover": "https://picsum.photos/seed/produto-11/600/600"
+    },
+    {
+      "id": 12,
+      "title": "Placa de Video RTX 4060",
+      "description": "GPU para jogos e edicao com excelente desempenho.",
+      "price": 2499.9,
+      "cover": "https://picsum.photos/seed/produto-12/600/600"
+    },
+    {
+      "id": 13,
+      "title": "Fonte 650W 80 Plus Bronze",
+      "description": "Fonte eficiente e estavel para setups gamers.",
+      "price": 399.9,
+      "cover": "https://picsum.photos/seed/produto-13/600/600"
+    },
+    {
+      "id": 14,
+      "title": "Gabinete Mid Tower com RGB",
+      "description": "Gabinete com bom fluxo de ar e visual moderno.",
+      "price": 349.9,
+      "cover": "https://picsum.photos/seed/produto-14/600/600"
+    },
+    {
+      "id": 15,
+      "title": "Cadeira Gamer Ergonomica",
+      "description": "Cadeira confortavel para longas horas de uso.",
+      "price": 1299.9,
+      "cover": "https://picsum.photos/seed/produto-15/600/600"
+    },
+    {
+      "id": 16,
+      "title": "Mesa para Setup 140cm",
+      "description": "Mesa ampla para monitor, teclado e acessorios.",
+      "price": 899.9,
+      "cover": "https://picsum.photos/seed/produto-16/600/600"
+    },
+    {
+      "id": 17,
+      "title": "Roteador Wi-Fi 6",
+      "description": "Conexao rapida para varios dispositivos ao mesmo tempo.",
+      "price": 529.9,
+      "cover": "https://picsum.photos/seed/produto-17/600/600"
+    },
+    {
+      "id": 18,
+      "title": "Impressora Multifuncional",
+      "description": "Imprime, copia e digitaliza com conectividade sem fio.",
+      "price": 749.9,
+      "cover": "https://picsum.photos/seed/produto-18/600/600"
+    },
+    {
+      "id": 19,
+      "title": "Controle Sem Fio para PC",
+      "description": "Controle ergonomico com baixa latencia.",
+      "price": 279.9,
+      "cover": "https://picsum.photos/seed/produto-19/600/600"
+    },
+    {
+      "id": 20,
+      "title": "Caixa de Som Bluetooth Portatil",
+      "description": "Som potente com bateria de longa duracao.",
+      "price": 359.9,
+      "cover": "https://picsum.photos/seed/produto-20/600/600"
+    }
+  ]
+}
