@@ -22,9 +22,11 @@ interface CartProviderProps {
 export const CartContext = createContext({} as CartContextData);
 
 function CartProvider({ children }: CartProviderProps) {
-  const [cart] = useState<CartProps[]>([]);
+  const [cart, setCart] = useState<CartProps[]>([]);
   return (
-    <CartContext.Provider value={{ cart }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ cart, cartAmount: cart.length }}>
+      {children}
+    </CartContext.Provider>
   );
 }
 
