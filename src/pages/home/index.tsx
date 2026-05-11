@@ -2,7 +2,7 @@ import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { BsCartPlus } from "react-icons/bs";
 
-interface ProductProps {
+export interface ProductProps {
   id: number;
   title: string;
   description: string;
@@ -20,6 +20,11 @@ export function Home() {
 
     getProducts();
   }, []);
+
+  function handleAddCarItem(produtc: ProductProps) {
+    console.log(produtc);
+  }
+
   return (
     <div>
       <main className="w-full max-w-7xl px-4 mx-auto mt-4 pt-4">
@@ -45,7 +50,10 @@ export function Home() {
                     currency: "BRL",
                   })}
                 </strong>
-                <button className="cursor-pointer">
+                <button
+                  className="cursor-pointer"
+                  onClick={() => handleAddCarItem(produtc)}
+                >
                   <BsCartPlus size={20} color="#121212" />
                 </button>
               </div>
