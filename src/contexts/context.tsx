@@ -1,5 +1,8 @@
 import type { ReactNode } from "react";
 import { createContext, useState } from "react";
+import { ProductProps } from "../pages/home";
+
+
 interface CartContextData {
   cart: CartProps[];
   cartAmount: number;
@@ -21,8 +24,19 @@ interface CartProviderProps {
 
 export const CartContext = createContext({} as CartContextData);
 
+
+
+
 function CartProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<CartProps[]>([]);
+
+function addItemCart(newItem:ProductProps) {
+  //Adiciona no carrinho
+
+  
+}
+
+
   return (
     <CartContext.Provider value={{ cart, cartAmount: cart.length }}>
       {children}
