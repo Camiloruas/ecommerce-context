@@ -24,7 +24,7 @@ export function Home() {
     <div>
       <main className="w-full max-w-7xl px-4 mx-auto mt-4 pt-4">
         <h1 className="font-bold text-2xl mb-4 text-center">
-          Produtos em alta
+          -- Produtos em alta --
         </h1>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
