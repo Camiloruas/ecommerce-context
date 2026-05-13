@@ -1,6 +1,7 @@
 import { api } from "../../services/api";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BsCartPlus } from "react-icons/bs";
+import { CartContext } from "../../contexts/context";
 
 export interface ProductProps {
   id: number;
@@ -10,6 +11,7 @@ export interface ProductProps {
   cover: string;
 }
 export function Home() {
+  const { addItemCart } = useContext(CartContext);
   const [products, setProducts] = useState<ProductProps[]>([]);
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export function Home() {
   }, []);
 
   function handleAddCarItem(produtc: ProductProps) {
-    console.log(produtc);
+    addItemCart(produtc);
   }
 
   return (
