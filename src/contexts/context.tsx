@@ -54,6 +54,11 @@ function CartProvider({ children }: CartProviderProps) {
 
   function removeItemCart(product: CartProps) {
     const indexItem = cart.findIndex((item) => item.id === product.id);
+
+    if (cart[indexItem]?.amount > 1) {
+      /* Diminuir apenas um amount */
+    }
+    const removeItem = cart.filter((item) => item.id !== product.id);
   }
 
   return (
