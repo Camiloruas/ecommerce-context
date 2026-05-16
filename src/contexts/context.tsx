@@ -40,6 +40,7 @@ function CartProvider({ children }: CartProviderProps) {
         cartList[indexItem].amount * cartList[indexItem].price;
 
       setCart(cartList);
+      totalResultCart(cartList);
       return;
     }
 
@@ -50,6 +51,7 @@ function CartProvider({ children }: CartProviderProps) {
     };
 
     setCart((product) => [...product, data]);
+    totalResultCart([...cart, data]);
   }
 
   function removeItemCart(product: CartProps) {
@@ -59,6 +61,20 @@ function CartProvider({ children }: CartProviderProps) {
       /* Diminuir apenas um amount */
     }
     const removeItem = cart.filter((item) => item.id !== product.id);
+    setCart(removeItem);
+    totalResultCart(removeItem);
+  }
+
+  function totalResultCart(items: CartProps[]) {
+    let myCart = items;
+    let result = myCart.reduce((acc, obj) => {
+      return acc + obj.total;
+    }, 0);
+    const resultFormat = result.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+    return resultFormat;
   }
 
   return (
