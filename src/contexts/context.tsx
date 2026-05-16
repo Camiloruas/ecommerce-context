@@ -6,6 +6,8 @@ interface CartContextData {
   cart: CartProps[];
   cartAmount: number;
   addItemCart: (newItem: ProductProps) => void;
+  removeItemCart: (product: CartProps) => void;
+  total:string
 }
 
 interface CartProps {
@@ -26,6 +28,7 @@ export const CartContext = createContext({} as CartContextData);
 
 function CartProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<CartProps[]>([]);
+  const [total, setTotal] = useState("")
 
   function addItemCart(newItem: ProductProps) {
     //Adiciona no carrinho
@@ -79,7 +82,7 @@ function CartProvider({ children }: CartProviderProps) {
 
   return (
     <CartContext.Provider
-      value={{ cart, cartAmount: cart.length, addItemCart }}
+      value={{ cart, cartAmount: cart.length, addItemCart,removeItemCart,total }}
     >
       {children}
     </CartContext.Provider>
