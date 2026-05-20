@@ -35,14 +35,14 @@ export function ProductDetail() {
       {/* Exemplo inicial exibindo o título do produto retornado pela API. */}
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
+        <div className="h-56 md:h-72 flex items-center justify-center">
           <img
-            className="max-w-full max-h-full object-contain"
+            className="max-w-full max-h-52 md:max-h-64 object-contain"
             src={product.cover}
             alt={product.title}
           />
         </div>
-        <div>
+        <div className="flex flex-col justify-center">
           <h1 className="text-2xl font-medium">{product.title}</h1>
           <p>{product.description}</p>
           <strong className="flex gap-2 items-center mb-6">
