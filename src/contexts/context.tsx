@@ -7,7 +7,7 @@ interface CartContextData {
   cartAmount: number;
   addItemCart: (newItem: ProductProps) => void;
   removeItemCart: (product: CartProps) => void;
-  total:string
+  total: string;
 }
 
 interface CartProps {
@@ -28,7 +28,7 @@ export const CartContext = createContext({} as CartContextData);
 
 function CartProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<CartProps[]>([]);
-  const [total, setTotal] = useState("")
+  const [total, setTotal] = useState("");
 
   function addItemCart(newItem: ProductProps) {
     //Adiciona no carrinho
@@ -73,16 +73,24 @@ function CartProvider({ children }: CartProviderProps) {
     let result = myCart.reduce((acc, obj) => {
       return acc + obj.total;
     }, 0);
-    const resultFormat = result.toLocaleString("pt-br", {
+    const resultFormated = result.toLocaleString("pt-br", {
       style: "currency",
       currency: "BRL",
     });
-    return resultFormat;
+    setTotal(resultFormated);
+
+    //return resultFormated;
   }
 
   return (
     <CartContext.Provider
-      value={{ cart, cartAmount: cart.length, addItemCart,removeItemCart,total }}
+      value={{
+        cart,
+        cartAmount: cart.length,
+        addItemCart,
+        removeItemCart,
+        total,
+      }}
     >
       {children}
     </CartContext.Provider>
