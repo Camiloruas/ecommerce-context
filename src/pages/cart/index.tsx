@@ -8,7 +8,7 @@ export function Cart() {
     useContext(CartContext);
 
   return (
-    <div className="w-full max-w-7xl mx-auto bg-amber-100">
+    <div className="w-full max-w-7xl mx-auto">
       <h1 className="font-medium text-2xl text-center my-4">
         Pagina Carrinho de Compras
       </h1>
