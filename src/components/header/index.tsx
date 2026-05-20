@@ -4,15 +4,18 @@ import { CartContext } from "../../contexts/context";
 import { useContext } from "react";
 
 export function Header() {
+  // Lê do contexto quantos tipos de produtos existem no carrinho.
   const { cartAmount } = useContext(CartContext);
 
   return (
     <header className="w-full bg-slate-200">
       <nav className="w-full flex max-w-7xl h-14 items-center justify-between px-5 mx-auto">
+        {/* Link para a página inicial (catálogo de produtos). */}
         <Link to="/" className="font-bold text-2xl">
           Dev Shopping
         </Link>
 
+        {/* Link para o carrinho com badge de quantidade. */}
         <Link to="cart" className="relative inline-flex">
           <FiShoppingCart size={24} color="#121212" />
           {cartAmount > 0 && (
