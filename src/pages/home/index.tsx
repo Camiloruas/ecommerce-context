@@ -37,38 +37,47 @@ export function Home() {
   }
 
   return (
-    <div>
-      <main className="w-full max-w-7xl px-4 mx-auto mt-4 pt-4">
-        <h1 className="font-bold text-2xl mb-4 text-center">
-          -- Produtos em alta --
+    <div className="pb-12">
+      <main className="w-full max-w-7xl px-4 mx-auto mt-8">
+        <h1 className="font-black text-3xl md:text-4xl mb-2 text-center text-slate-900">
+          Produtos em alta
         </h1>
+        <p className="text-center text-slate-600 mb-8">
+          Escolha seus favoritos e adicione ao carrinho com um clique.
+        </p>
 
         {/* Grade de cards de produtos. */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {products.map((product) => (
-            <section key={product.id} className="w-full">
+            <section
+              key={product.id}
+              className="w-full rounded-2xl border border-slate-200 bg-white/90 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-3"
+            >
               <Link to={`/product/${product.id}`}>
-                <div className="w-full h-40 bg-white rounded-lg mb-2 p-2">
+                <div className="w-full h-44 bg-slate-50 rounded-xl mb-3 p-3 border border-slate-100">
                   <img
                     className="max-w-full max-h-full object-contain"
                     src={product.cover}
                     alt={product.title}
                   />
                 </div>
-                <p className="font-medium mt-1 mb-2">{product.title}</p>
+                <p className="font-semibold mt-1 mb-2 text-slate-800 min-h-12">
+                  {product.title}
+                </p>
               </Link>
-              <div className="flex gap-3 items-center">
-                <strong className="text-zinc-700/90">
+              <div className="flex gap-3 items-center justify-between">
+                <strong className="text-slate-700">
                   {product.price.toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
                   })}
                 </strong>
                 <button
-                  className="cursor-pointer"
+                  className="cursor-pointer h-9 w-9 rounded-full bg-sky-600 text-white flex items-center justify-center hover:bg-sky-700 transition"
                   onClick={() => handleAddCarItem(product)}
+                  aria-label="Adicionar ao carrinho"
                 >
-                  <BsCartPlus size={20} color="#121212" />
+                  <BsCartPlus size={18} />
                 </button>
               </div>
             </section>

@@ -5,9 +5,9 @@ import { Header } from "../header";
 // O Header fica fixo no topo e o Outlet troca o conteúdo conforme a rota atual.
 export function Layout() {
   return (
-    <>
+    <div className="min-h-screen">
       <Header />
       <Outlet />
-    </>
+    </div>
   );
 }
