@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { api } from "../../services/api";
+import { api, endpoints } from "../../services/api";
 import type { ProductProps } from "../home";
 import { BsCartPlus } from "react-icons/bs";
 import { CartContext } from "../../contexts/context";
@@ -8,6 +8,8 @@ import toast from "react-hot-toast";
 
 export function ProductDetail() {
   const [product, setProduct] = useState<ProductProps | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const { id } = useParams();
   const { addItemCart } = useContext(CartContext);
   const navigate = useNavigate();
@@ -16,17 +18,42 @@ export function ProductDetail() {
     if (!id) return;
 
     async function getProducts() {
-      const response = await api.get(`/products/${id}`);
-      setProduct(response.data);
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await api.get(`${endpoints.products}/${id}`);
+        setProduct(response.data ?? null);
+      } catch {
+        setError("Falha ao carregar produto. Verifique sua conexão.");
+        setProduct(null);
+      } finally {
+        setLoading(false);
+      }
     }
 
     getProducts();
   }, [id]);
 
-  if (!product) {
+  if (loading) {
     return (
       <main className="w-full max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-semibold text-slate-800">Carregando produto...</h1>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main className="w-full max-w-7xl mx-auto px-4 py-8">
+        <h1 className="text-2xl font-semibold text-red-600">{error}</h1>
+      </main>
+    );
+  }
+
+  if (!product) {
+    return (
+      <main className="w-full max-w-7xl mx-auto px-4 py-8">
+        <h1 className="text-2xl font-semibold text-slate-800">Produto não encontrado.</h1>
       </main>
     );
   }

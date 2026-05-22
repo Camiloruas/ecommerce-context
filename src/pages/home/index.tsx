@@ -1,4 +1,4 @@
-import { api } from "../../services/api";
+import { api, endpoints } from "../../services/api";
 import { useContext, useEffect, useState } from "react";
 import { BsCartPlus } from "react-icons/bs";
 import { CartContext } from "../../contexts/context";
@@ -19,12 +19,22 @@ export function Home() {
 
   // Estado local com a lista de produtos exibida na tela.
   const [products, setProducts] = useState<ProductProps[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Busca produtos uma única vez quando a Home carrega.
     async function getProducts() {
-      const response = await api.get("/products");
-      setProducts(response.data);
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await api.get(endpoints.products);
+        setProducts(Array.isArray(response.data) ? response.data : []);
+      } catch {
+        setError("Falha ao carregar produtos. Verifique sua conexão.");
+      } finally {
+        setLoading(false);
+      }
     }
 
     getProducts();
@@ -45,6 +55,18 @@ export function Home() {
         <p className="text-center text-slate-600 mb-8">
           Escolha seus favoritos e adicione ao carrinho com um clique.
         </p>
+
+        {loading && (
+          <p className="text-center text-slate-600">Carregando produtos...</p>
+        )}
+
+        {!loading && error && (
+          <p className="text-center text-red-600">{error}</p>
+        )}
+
+        {!loading && !error && products.length === 0 && (
+          <p className="text-center text-slate-600">Nenhum produto encontrado.</p>
+        )}
 
         {/* Grade de cards de produtos. */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">

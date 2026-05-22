@@ -1,8 +1,15 @@
 import axios from "axios";
 
-// Instância única do axios usada no projeto inteiro.
-// A baseURL aponta para o json-server local que serve os dados do db.json.
-// Para iniciar o servidor de dados: json-server --watch db.json
+const API_URL = import.meta.env.VITE_API_URL;
+
+if (!API_URL) {
+  throw new Error("VITE_API_URL não definida. Configure no arquivo .env");
+}
+
 export const api = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: API_URL,
 });
+
+export const endpoints = {
+  products: "/products",
+};

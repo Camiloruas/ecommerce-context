@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 AGENT.md
+
+# Environment files
+.env
+.env.*
+!.env.example
