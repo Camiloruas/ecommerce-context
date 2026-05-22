@@ -13,9 +13,9 @@ export function Header() {
         {/* Link para a página inicial (catálogo de produtos). */}
         <Link
           to="/"
-          className="font-black text-2xl tracking-tight text-slate-900 hover:text-sky-700 transition-colors"
+          className="font-black text-2xl tracking-normal text-slate-900 hover:text-sky-700 transition-colors"
         >
-          Dev Shopping
+          Lume Store
         </Link>
 
         {/* Link para o carrinho com badge de quantidade. */}
