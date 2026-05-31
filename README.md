@@ -2,7 +2,7 @@
 
 Projeto de estudo desenvolvido com React, TypeScript e Vite para praticar Context API em um fluxo inspirado em e-commerce, com catálogo, detalhes de produto e carrinho de compras.
 
- **Projeto online:** [lume-store.vercel.app](https://ecommerce-context-nine.vercel.app)
+**Projeto online:** [lume-store.vercel.app](https://ecommerce-context-nine.vercel.app)
 
 ## Idiomas
 
@@ -230,7 +230,7 @@ Consumed endpoints:
 
 ### Tests and Checks
 
-Run on May 22, 2026:
+Run on May 23, 2026:
 
 ```bash
 npm run build
