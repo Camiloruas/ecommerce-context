@@ -16,7 +16,7 @@ const socialLinks = [
   {
     name: "WhatsApp",
     href: "https://wa.me/5579998448030",
-    icon: <FaWhatsapp size={20} />,
+    icon: <FaWhatsapp size={21} />,
   },
 ];
 
